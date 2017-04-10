@@ -66,10 +66,10 @@
    ```
    - 配置SDK
        
-    - 选择SDK Manager，下载android5.1版本
-    - 安装 SDK Platform-Tools
-    - 安装 Android SDK Tools
-    - 配置环境变量
+      - 选择SDK Manager，下载android5.1版本
+      - 安装 SDK Platform-Tools
+      - 安装 Android SDK Tools
+      - 配置环境变量
    
    ```
    sudo vi /etc/profile
