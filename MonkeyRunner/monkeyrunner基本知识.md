@@ -92,70 +92,62 @@ MonkeyRunner.sleep(3)
 
 ```
 result=device.takeSnapshot()
-result.writeToFile('takeSnapshot\\result1.png','png')
+result.writeToFile('./result1.png','png')
 ```
 
-写文件MonkeyImage
+  - MonkeyImage.writeToFile(参数1:输出文件名，也可以包括路径,参数2:目标格式)
+  
+  - 写成功返回true，否则返回false
 
-MonkeyImage.writeToFile(参数1:输出文件名，也可以包括路径,参数2:目标格式)
-写成功返回true，否则返回false
+## 输入字符
 
-
-键盘上的类型指定的字符串，这相当于要求每个字符串中的字符按（键码，DOWN_AND_UP）.
-字符串发送到键盘
+```
 device.type('字符串')
+```
 
-唤醒设备屏幕（在设备屏幕上唤醒）
+## 唤醒设备屏幕
 
+```
 device.wake()
+```
 
-重新引导到指定的引导程序指定的设备
+## 重启
 
+```
 device.reboot()
-=========================================================
+```
 
-在指定位置发送触摸事件（x,y的单位为像素）
+## 在指定位置发送触摸事件（x,y的单位为像素）
 
+```
 device.touch(x,y,TouchPressType-触摸事件类型)
+```
 
-发送到指定键的一个关键事件
+## 发送到指定键的一个关键事件
 
+```
 device.press(参数1:键码,参数2:触摸事件类型)
-参数1：见android.view.KeyEvent
-参数2，如有TouchPressType()返回的类型－触摸事件类型，有三种。
-1、DOWN 发送一个DOWN事件。指定DOWN事件类型发送到设备，对应的按一个键或触摸屏幕上。
-2、UP 发送一个UP事件。指定UP事件类型发送到设备，对应释放一个键或从屏幕上抬起。
-3、DOWN_AND_UP 发送一个DOWN事件，然后一个UP事件。对应于输入键或点击屏幕。
-以上三种事件做为press()或touch()参数。原英文如下：
-use this with the type argument of press() or touch() to send a down event.
+```
 
+  - 示例
+    
+    - 按下HOME键 device.press('KEYCODE_HOME',MonkeyDevice.DOWN_AND_UP) 
+    - 按下BACK键 device.press('KEYCODE_BACK',MonkeyDevice.DOWN_AND_UP) 
+    - 输入回车 device.press('KEYCODE_ENTER',MonkeyDevice.DOWN_AND_UP)
 
-为了模拟输入键，发送DOWN_AND_UP。
-
-
-参数1的部分具体内容逻辑：
-
-按下HOME键 device.press('KEYCODE_HOME',MonkeyDevice.DOWN_AND_UP) 
-按下BACK键 device.press('KEYCODE_BACK',MonkeyDevice.DOWN_AND_UP) 
-按下下导航键 device.press('KEYCODE_DPAD_DOWN',MonkeyDevice.DOWN_AND_UP) 
-按下上导航键 device.press('KEYCODE_DPAD_UP',MonkeyDevice.DOWN_AND_UP) 
-按下OK键 device.press('KEYCODE_DPAD_CENTER',MonkeyDevice.DOWN_AND_UP)
-
-
-device.press('KEYCODE_ENTER',MonkeyDevice.DOWN_AND_UP)#输入回车
-device.press('KEYCODE_BACK',MonkeyDevice.DOWN_AND_UP)#点击返回
-
-home键 KEYCODE_HOME 
-back键 KEYCODE_BACK 
-send键 KEYCODE_CALL 
-end键 KEYCODE_ENDCALL 
-上导航键 KEYCODE_DPAD_UP 
-下导航键 KEYCODE_DPAD_DOWN 
-左导航 KEYCODE_DPAD_LEFT 
-右导航键 KEYCODE_DPAD_RIGHT  
-ok键 KEYCODE_DPAD_CENTER 
-上音量键 KEYCODE_VOLUME_UP  
-下音量键 KEYCODE_VOLUME_DOWN 
-power键 KEYCODE_POWER 
-camera键 KEYCODE_CAMERA 
-menu键 KEYCODE_MENU 
+  - 参数1：键码
+    
+    - home键 KEYCODE_HOME 
+    - back键 KEYCODE_BACK 
+    - send键 KEYCODE_CALL 
+    - end键 KEYCODE_ENDCALL 
+    - 上导航键 KEYCODE_DPAD_UP 
+    - 下导航键 KEYCODE_DPAD_DOWN 
+    - 左导航 KEYCODE_DPAD_LEFT 
+    - 右导航键 KEYCODE_DPAD_RIGHT  
+    - ok键 KEYCODE_DPAD_CENTER 
+    - 上音量键 KEYCODE_VOLUME_UP  
+    - 下音量键 KEYCODE_VOLUME_DOWN 
+    - power键 KEYCODE_POWER 
+    - camera键 KEYCODE_CAMERA 
+    - menu键 KEYCODE_MENU 
