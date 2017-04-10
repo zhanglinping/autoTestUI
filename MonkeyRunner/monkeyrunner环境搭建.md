@@ -29,6 +29,7 @@
   export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib 
   export PATH=$JAVA_HOME/bin:$PATH 
   ```  
+  
   - 使配置生效
   
   ```
@@ -74,7 +75,8 @@
    sudo vi /etc/profile
    export PATH=$PATH:/opt/Android/Sdk/tools:/opt/Android/Sdk/platform-tools
    ```
-    - 验证是否成功
+   
+   - 验证是否成功
    
    ```
    android list target
