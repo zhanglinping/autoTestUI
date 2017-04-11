@@ -62,22 +62,49 @@
     - format：目标格式，默认值为png。
   - 返回值: 目标图片格式的字符串
 
-
-////以下还未整理////
 ## 8、com.Android.monkeyrunner.MonkeyDevice.broadcastIntent
   
   - 对设备发送一个广播信号。
   - 用法：MonkeyDevice.broadcastIntent(uri,action,data,mimetype,categories,extras,component,flags)
     - uri：信号的uri
-    - action：
-    - data  
-    - mimetype
-    - categories 
-    - extras
-    - component 
-    - flags 
-  - 返回值: nothing。
-  
+    - action：The action for the Intent
+    - data：The data URI for the Intent
+    - mimetype：The mime type for the Intent
+    - categories：An iterable of category names for the Intent
+    - extras：A dictionary of extras to add to the Intent. Types of these extras are inferred from the python types of the values   
+    - component：The component of the Intent
+    - flags：An iterable of flags for the Intent.All arguments are optional. The default value for each argument is null
+  - 返回值: nothing
+
+## 9、com.android.monkeyrunner.MonkeyImage.getRawPixel
+
+  - 在x,y位置处获取一个单个的ARGB像素，参数x，y都是基于0坐标，表示一个像素尺寸，x向右增益，y向下增益，这个方法返回一个数组。
+  - 用法：MonkeyImage.getRawPixel(x,y)
+     - x：x偏移
+     - y：y偏移
+  - 返回值: A tuple of (A, R, G, B) for the pixel. Each item in the tuple has the range 0-255
+
+## 10、com.android.monkeyrunner.MonkeyImage.getRawPixelInt
+
+  - 同getRawPixel，只是返回的是一个整型。
+  - 用法：MonkeyImage.getRawPixelInt(x,y)
+    - x：x偏移
+    - y：y偏移 
+  - 返回值: An unsigned integer pixel for x,y. The 8 high-order bits are A, followedby 8 bits for R, 8 for G, and 8 for B
+
+## 11、com.android.monkeyrunner.MonkeyImage.getSubImage
+
+  - 复制一个图片的矩形区域。
+  - 用法：MonkeyImage.getSubImage(rect)
+rect：A tuple (x, y, w, h)，x，y指定矩形区域的左上角，w为矩形宽，h为矩形高
+返回：一个表示复制区域的图形对象。a MonkeyImage object representing the copied region.
+
+## 12、com.android.monkeyrunner.MonkeyDevice.getSystemProperty
+getProperty的同义。
+用法：MonkeyDevice.getSystemProperty(key)
+key：系统变量的名称。
+返回：系统变量的值
+
 5、com.android.monkeyrunner.MonkeyDevice.drag
 在设备屏幕上模拟拖曳。
 用法：MonkeyDevice.drag(start,end,duration,steps)
@@ -97,33 +124,6 @@ Returns: returns nothing.
 用法：MonkeyDevice.getProperty(key)
 key：变量的名称（key列表参加http://developer.android.com/tools/help/MonkeyDevice.html#table1）
 返回值：变量的值The variable's value
-
-8、com.android.monkeyrunner.MonkeyImage.getRawPixel
-在x,y位置处获取一个单个的ARGB像素，参数x，y都是基于0坐标，表示一个像素尺寸，x向右增益，y向下增益，这个方法返回一个数组。
-用法：MonkeyImage.getRawPixel(x,y)
- x：x偏移
- y：y偏移 
- Returns: A tuple of (A, R, G, B) for the pixel. Each item in the tuple has the range 0-255.
-
-9、com.android.monkeyrunner.MonkeyImage.getRawPixelInt
-同上.getRawPixel，只是返回的是一个整型。
-用法：MonkeyImage.getRawPixelInt(x,y)
-x：x偏移
-y：y偏移 
-Returns: An unsigned integer pixel for x,y. The 8 high-order bits are A, followedby 8 bits for R, 8 for G, and 8 for B.
-
-10、com.android.monkeyrunner.MonkeyImage.getSubImage
-复制一个图片的矩形区域。
-用法：MonkeyImage.getSubImage(rect)
-rect：A tuple (x, y, w, h)，x，y指定矩形区域的左上角，w为矩形宽，h为矩形高
-返回：一个表示复制区域的图形对象。a MonkeyImage object representing the copied region.
-
-11、com.android.monkeyrunner.MonkeyDevice.getSystemProperty
-getProperty的同义。
-用法：MonkeyDevice.getSystemProperty(key)
-key：系统变量的名称。
-返回：系统变量的值
-
 
 
 13、com.android.monkeyrunner.easy.By.id
