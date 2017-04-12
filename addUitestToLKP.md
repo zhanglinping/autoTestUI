@@ -13,3 +13,9 @@
     - otoDisplayRun.java也直接复制，仅需修改SolveProblems()部分
     
     - QQ.java中，部分相同，可复制后进行操作部分的修改
+
+## 包名获取
+
+- aapt dump badging ×.apk
+
+- adb shell dumpsys window w | grep name=
