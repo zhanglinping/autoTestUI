@@ -15,4 +15,4 @@ device.press('KEYCODE_ENTER')
 mr.sleep(3.0)
 result = device.takeSnapshot()
 
-result.writeToFile('resul1t\\result1.png','png');
+result.writeToFile('resul1t\\result1.png','png')
