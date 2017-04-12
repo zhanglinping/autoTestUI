@@ -96,134 +96,151 @@
 
   - 复制一个图片的矩形区域。
   - 用法：MonkeyImage.getSubImage(rect)
-rect：A tuple (x, y, w, h)，x，y指定矩形区域的左上角，w为矩形宽，h为矩形高
-返回：一个表示复制区域的图形对象。a MonkeyImage object representing the copied region.
+    - rect：A tuple (x, y, w, h)，x，y指定矩形区域的左上角，w为矩形宽，h为矩形高
+  - 返回值：一个表示复制区域的图形对象
 
-## 12、com.android.monkeyrunner.MonkeyDevice.getSystemProperty
-getProperty的同义。
-用法：MonkeyDevice.getSystemProperty(key)
-key：系统变量的名称。
-返回：系统变量的值
+## 12、com.android.monkeyrunner.MonkeyDevice.getProperty
 
-5、com.android.monkeyrunner.MonkeyDevice.drag
-在设备屏幕上模拟拖曳。
-用法：MonkeyDevice.drag(start,end,duration,steps)
-start：拖曳开始坐标 - The starting point for the drag (a tuple (x,y) in pixels) 
-end：拖曳结束坐标点- The end point for the drag (a tuple (x,y) in pixels 
-duration：持续时间 - Duration of the drag in seconds (default is 1.0 seconds) 
-steps：拖曳步骤- The number of steps to take when interpolating points. (default is 10) 
-Returns: returns nothing.
+  - 在设备上给出变量的名称，返回变量的值。
+  - 用法：MonkeyDevice.getProperty(key)
+    - key：变量的名称（key列表参考http://developer.android.com/tools/help/MonkeyDevice.html#table1）
+  - 返回值：变量的值
 
-6、com.android.monkeyrunner.MonkeyDevice.getHierarchyViewer
-获取设备的显示层次。
-用法：MonkeyDevice.getHierarchyViewer()
-返回值：一个HierarchyViewer类型的对象。
+## 13、com.android.monkeyrunner.MonkeyDevice.getSystemProperty
+  
+  - getProperty的同义
+  - 用法：MonkeyDevice.getSystemProperty(key)
+    - key：系统变量的名称。
+  - 返回值：系统变量的值
 
-7、com.android.monkeyrunner.MonkeyDevice.getProperty
-在设备上给出变量的名称，返回变量的值。
-用法：MonkeyDevice.getProperty(key)
-key：变量的名称（key列表参加http://developer.android.com/tools/help/MonkeyDevice.html#table1）
-返回值：变量的值The variable's value
+## 14、com.android.monkeyrunner.MonkeyDevice.drag
 
+  - 在设备屏幕上模拟拖曳。
+  - 用法：MonkeyDevice.drag(start,end,duration,steps)
+    - start：拖曳开始坐标 
+    - end：拖曳结束坐标点
+    - duration：持续时间
+    - steps：拖曳步骤
+  - 返回值:nothing
 
-13、com.android.monkeyrunner.easy.By.id
-id - The identifier of the object. 
-Returns: returns nothing.
+## 15、com.android.monkeyrunner.MonkeyDevice.getHierarchyViewer
 
-15、com.android.monkeyrunner.MonkeyDevice.installPackage
-在设备上安装应用包，如果该包已经存在，那么体会掉原来的。
-用法：MonkeyDevice.intallPackage(path)
-path：安装包在本地的路径已经文件名。
-返回值：如果安装成功返回true，否则false。
+  - 获取设备的显示层次。
+  - 用法：MonkeyDevice.getHierarchyViewer()
+  - 返回值：一个HierarchyViewer类型的对象。
 
-16、com.android.monkeyrunner.MonkeyDevice.instrument
-运行测试设备的指定包。
-用法：MonkeyDevice.instrument(className,args)
-className：测试设备要执行的类，格式为packagename/classname，
-args：不会翻译。A map of strings to objects containing the arguments to pass to this instrumentation (default value is None). 
-返回：单个键值对，key-value，key为steam，value为包含测试输出的字符串。
+## 16、com.android.monkeyrunner.easy.By.id
 
-17、com.android.monkeyrunner.MonkeyRunner.loadImageFromFile
-Loads a MonkeyImage from a file.不会翻译
-用法：MonkeyRunner.loadImageFromFile(path)
-path：文件的路径，路径为电脑端路径。
-返回：表示指定文件的MonkeyImage对象。
+  - 使用ID进行测试
+  - 用法：easy_device.touch(By.id('id/digit7')，MonkeyDevice.DOWN_AND_UP)
+    - id：控件的ID
+  - 返回值:nothing
 
-18、com.android.monkeyrunner.MonkeyDevice.press
-给指定key发送一个key事件。
-用法：MonkeyDevice.press(name,type)
-name：keycode（参考android.view.KeyEvent）
-type：触摸事件类型，如DOWN_AND_UP。
-return：nothing。
+## 17、com.android.monkeyrunner.MonkeyDevice.installPackage
 
-19、com.android.monkeyrunner.MonkeyDevice.reboot
-重启指定设备进入指定加载模式。
-用法：MonkeyDevice.reboot(into)
-into：bootloader, recovery, or None
-return：nothing
+  - 在设备上安装应用包，如果该包已经存在，那么替换掉原来的。
+  - 用法：MonkeyDevice.intallPackage(path)
+    - path：安装包在本地的路径已经文件名。
+  - 返回值：如果安装成功返回true，否则false
 
-20、com.android.monkeyrunner.MonkeyDevice.removePackage
-从设备删除指定的包，包括相关的数据已经缓存。
-用法：MonkeyDevice.removePackage(package)
-package：指定要删除的包名
-return：删除成功则返回true。
+## 18、com.android.monkeyrunner.MonkeyDevice.instrument
 
-21、com.android.monkeyrunner.MonkeyImage.sameAs
-Compare this MonkeyImage object to aother MonkeyImage object.
-用法：MonkeyImage.sameAs(other,percent)
-other：其他MonkeyImage对象
-percent：百分比，取值为0.0-1.0
-return：如果一致返回true
+  - 运行测试设备的指定包。
+  - 用法：MonkeyDevice.instrument(className,args)
+    - className：测试设备要执行的类，格式为packagename/classname
+    - args：默认为空。参数传递给这个仪器的对象映射到一个字符串
+  - 返回值：单个键值对，key-value
 
-22、com.android.monkeyrunner.MonkeyDevice.shell
-执行adb shell命令并返回结果。
-用法：MonkeyDevice.shell(cmd)
-cmd：要执行的adb shell命令
-return：命令的输出
+## 19、com.android.monkeyrunner.MonkeyDevice.reboot
 
+  - 重启指定设备进入指定加载模式。
+  - 用法：MonkeyDevice.reboot(into)
+    - into：bootloader, recovery, or None
+  - 返回值：nothing
 
-24、com.android.monkeyrunner.MonkeyDevice.startActivity
-在设备上开始一个活动，
-用法：MonkeyDevice.startActivity(uri,action,data,mimetype,categories,extras,component,flags)
-uri：
-action：
-data：
-mimetype：
-categories：
-extras：
-component：
-flags：
-return：nothings
+## 20、com.android.monkeyrunner.MonkeyDevice.removePackage
 
-25：com.android.monkeyrunner.MonkeyDevice.takeSnapshot
-获取设备的屏幕缓存
-用法：MonkeyDevice.takeSnapshot()
-return：一个MonkeyImage对象。
+  - 从设备删除指定的包，包括相关的数据已经缓存。
+  - 用法：MonkeyDevice.removePackage(package)
+    - package：指定要删除的包名
+  - 返回值：删除成功则返回true
 
-26、com.android.monkeyrunner.MonkeyDevice.touch
-对指定位置发送一个触摸事件
-用法：MonkeyDevice.touch(x,y,type)
-x：
-y：
-type：触摸事件类型。
-return：nothing
+## 21、com.android.monkeyrunner.MonkeyImage.sameAs
 
-27、com.android.monkeyrunner.MonkeyDevice.type
-从键盘键入指定的字符串，这相当于字符串的每一个字符都执行一次press（keycode，DOWN_AND_UP）方法。
-用法：MonkeyDevice.type(message)
-message：发送到键盘的字符串
-Returns: returns nothing.
+  - 比较两个对象
+  - 用法：MonkeyImage.sameAs(other,percent)
+    - other：其他MonkeyImage对象
+    - percent：百分比，取值为0.0-1.0
+  - 返回值：如果一致返回true
 
+## 22、com.android.monkeyrunner.MonkeyDevice.shell
 
+  - 执行adb shell命令并返回结果。
+  - 用法：MonkeyDevice.shell(cmd)
+    - cmd：要执行的adb shell命令
+  - 返回值：命令的输出
 
-29、com.android.monkeyrunner.MonkeyDevice.wake
-唤醒设备的屏幕
-用法：MonkeyDevice.wake()
-Returns: returns nothing.
+## 23、com.android.monkeyrunner.MonkeyRunner.loadImageFromFile
 
-30、com.android.monkeyrunner.MonkeyImage.writeToFile
-将MonkeyImage对象写入一个文件，
-用法：MonkeyImage.writeToFile(path,format)
-path：输入的文件名，可选择的包含路径
-format：目标格式，默认为png。
-return：如果输出成功返回true。
+  - 加载文件
+  - 用法：MonkeyRunner.loadImageFromFile(path)
+    - path：文件的路径，运行monkeyrunner机器上的路径，而不是安卓设备的路径
+  - 返回值：表示指定文件的MonkeyImage对象
+
+## 24、com.android.monkeyrunner.MonkeyDevice.startActivity
+
+  - 在设备上开始一个活动
+  - 用法：MonkeyDevice.startActivity(uri,action,data,mimetype,categories,extras,component,flags)
+    - uri：Intent的URI
+    - action：Intent的动作
+    - data：Intent的data URI
+    - mimetype：Intent的MIME类型
+    - categories：可迭代的数据结构，包含对Intent种类有定义的字符串
+    - extras：Intent附加数据的dictionary
+    - component：Intent的组件，本变量的使用会将Intent指向特定的Android包中的特定类
+    - flags：一个可迭代的数据结构，包含控制Intent如何处理的标记
+  - 返回值：nothings
+
+## 25、com.android.monkeyrunner.MonkeyDevice.takeSnapshot
+
+  - 获取设备的屏幕缓存，生成当前屏幕的截图
+  - 用法：MonkeyDevice.takeSnapshot()
+  - 返回值：一个MonkeyImage对象。
+
+## 26、com.android.monkeyrunner.MonkeyDevice.touch
+
+  - 对指定位置发送一个触摸事件
+  - 用法：MonkeyDevice.touch(x,y,type)
+    - x：发生触摸手势的水平位置，以实际设备像素为单位, 从屏幕左边为起始，以当前朝向为准
+    - y：发生触摸手势的垂直位置，以实际设备像素为单位, 从屏幕左边为起始，以当前朝向为准
+  - type：触摸事件类型，可用的值有DOWN，UP，和DOWN_AND_UP
+  - 返回值：nothing
+
+## 27、com.android.monkeyrunner.MonkeyDevice.type
+
+  - 从键盘键入指定的字符串，这相当于字符串的每一个字符都执行一次press（keycode，DOWN_AND_UP）方法。
+  - 用法：MonkeyDevice.type(message)
+    - message：发送到键盘的字符串
+  - 返回值:nothing
+
+## 28、com.android.monkeyrunner.MonkeyDevice.press
+
+  - 给指定key发送一个key事件
+  - 用法：MonkeyDevice.press(name,type)
+    - name：待发送的键码名称
+    - type：触摸事件类型，如DOWN_AND_UP
+  - 返回值：nothing
+
+## 29、com.android.monkeyrunner.MonkeyDevice.wake
+
+  - 唤醒设备的屏幕
+  - 用法：MonkeyDevice.wake()
+  - 返回值:nothing
+
+## 30、com.android.monkeyrunner.MonkeyImage.writeToFile
+
+  - 将MonkeyImage对象写入一个文件，
+  - 用法：MonkeyImage.writeToFile(path,format)
+    - path：输入的文件名，可选择的包含路径
+    - format：目标格式，默认为png。
+  - 返回值：如果输出成功返回true
