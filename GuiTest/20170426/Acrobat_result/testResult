@@ -1,0 +1,31 @@
+already connected to 192.168.0.161:5555
+[100%] /data/local/tmp/otoAutoTest.jar
+/home/zhanglp/GuiTest/testcases/Acrobat/otoAutoTest.jar: 1 file pushed. 2.4 MB/s (6100 bytes in 0.002s)
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.autoTestUI.adobe_acrobat_dc:
+INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
+INSTRUMENTATION_STATUS: test=testadobe_acrobat_dc
+INSTRUMENTATION_STATUS: class=com.autoTestUI.adobe_acrobat_dc
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 1
+-------------Start time： 2017-04-26 10:05:21null
+----Process judgment :  ps  | grep null
+-------------结束时间： 2017-04-26 10:05:21
+-------------APP launch 时间： 426ms
+0111向左改变窗口大小失败！0
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=.
+INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
+INSTRUMENTATION_STATUS: test=testadobe_acrobat_dc
+INSTRUMENTATION_STATUS: class=com.autoTestUI.adobe_acrobat_dc
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 0
+INSTRUMENTATION_STATUS: stream=
+Test results for WatcherResultPrinter=.
+Time: 24.052
+
+OK (1 test)
+
+
+INSTRUMENTATION_STATUS_CODE: -1
