@@ -17,10 +17,10 @@ public class firefox extends UiAutomatorTestCase {
 		
 		assertTrue("screen on :can't wakeup", device.isScreenOn());
 		otoDisplayRun.port = "5555";
-		otoDisplayRun.apppackage = "org.mozilla.firefox";
-		otoDisplayRun.appactivity = "org.mozilla.firefox.App";
+		otoDisplayRun.apppackage = "org.mozilla.fennec_root";
+		otoDisplayRun.appactivity = "org.mozilla.fennec_root.App";
 		
-		String appName = "org.mozilla.firefox/org.mozilla.firefox.App";
+		String appName = "org.mozilla.fennec_root/org.mozilla.fennec_root.App";
 		
 		window_lib.windowtest(device, appName);
 		

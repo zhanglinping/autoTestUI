@@ -1,0 +1,56 @@
+already connected to 192.168.0.161:5555
+[100%] /data/local/tmp/otoAutoTest.jar
+/home/zhanglp/autoTestUI/GuiTest/testcases/firefox/otoAutoTest.jar: 1 file pushed. 1.1 MB/s (6592 bytes in 0.006s)
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+com.autoTestUI.firefox:
+INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
+INSTRUMENTATION_STATUS: test=testfirefox
+INSTRUMENTATION_STATUS: class=com.autoTestUI.firefox
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: 1
+-------------Start time： 2017-04-26 11:25:445555
+<ERROR>Error type 3
+<ERROR>Error: Activity class {org.mozilla.firefox/org.mozilla.firefox.App} does not exist.
+----Process judgment :  ps  | grep org.mozilla.firefox
+-------------结束时间： 2017-04-26 11:25:44
+-------------APP launch 时间： 341ms
+INSTRUMENTATION_STATUS: numtests=1
+INSTRUMENTATION_STATUS: stream=
+Error in testfirefox:
+com.android.uiautomator.core.UiObjectNotFoundException: UiSelector[RESOURCE_ID=android:id/mwOuterBorder]
+	at com.android.uiautomator.core.UiObject.getVisibleBounds(UiObject.java:811)
+	at com.autoTestUI.window_lib.windowtest(window_lib.java:60)
+	at com.autoTestUI.firefox.testfirefox(firefox.java:25)
+	at com.android.uiautomator.testrunner.UiAutomatorTestRunner.start(UiAutomatorTestRunner.java:160)
+	at com.android.uiautomator.testrunner.UiAutomatorTestRunner.run(UiAutomatorTestRunner.java:96)
+	at com.android.commands.uiautomator.RunTestCommand.run(RunTestCommand.java:91)
+	at com.android.commands.uiautomator.Launcher.main(Launcher.java:83)
+	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:249)
+
+INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
+INSTRUMENTATION_STATUS: test=testfirefox
+INSTRUMENTATION_STATUS: class=com.autoTestUI.firefox
+INSTRUMENTATION_STATUS: stack=com.android.uiautomator.core.UiObjectNotFoundException: UiSelector[RESOURCE_ID=android:id/mwOuterBorder]
+	at com.android.uiautomator.core.UiObject.getVisibleBounds(UiObject.java:811)
+	at com.autoTestUI.window_lib.windowtest(window_lib.java:60)
+	at com.autoTestUI.firefox.testfirefox(firefox.java:25)
+	at com.android.uiautomator.testrunner.UiAutomatorTestRunner.start(UiAutomatorTestRunner.java:160)
+	at com.android.uiautomator.testrunner.UiAutomatorTestRunner.run(UiAutomatorTestRunner.java:96)
+	at com.android.commands.uiautomator.RunTestCommand.run(RunTestCommand.java:91)
+	at com.android.commands.uiautomator.Launcher.main(Launcher.java:83)
+	at com.android.internal.os.RuntimeInit.nativeFinishInit(Native Method)
+	at com.android.internal.os.RuntimeInit.main(RuntimeInit.java:249)
+
+INSTRUMENTATION_STATUS: current=1
+INSTRUMENTATION_STATUS_CODE: -1
+INSTRUMENTATION_STATUS: stream=
+Test results for WatcherResultPrinter=.E
+Time: 14.514
+
+FAILURES!!!
+Tests run: 1,  Failures: 0,  Errors: 1
+
+
+INSTRUMENTATION_STATUS_CODE: -1
