@@ -1,5 +1,5 @@
 #!/bin/bash -xu
-ip_android=192.168.0.161
+ip_android=192.168.0.159
 adbPort=5555
 testfold=testcases
 date=`date +%Y%m%d`
