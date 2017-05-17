@@ -52,7 +52,10 @@ public class window_lib extends UiAutomatorTestCase{
 		
 		
 		Thread.sleep(3000);
-		
+		UiObject objectMax = new UiObject(
+				new UiSelector().resourceId("android:id/mwMaximizeBtn"));
+		objectMax.click();
+		Thread.sleep(1000);
 
 		// 改变窗体大小 左上拉动 改变大小
 		UiObject objectSide = new UiObject(
@@ -98,8 +101,6 @@ public class window_lib extends UiAutomatorTestCase{
 		Thread.sleep(2000);
 
 		// 最大化
-		UiObject objectMax = new UiObject(
-				new UiSelector().resourceId("android:id/mwMaximizeBtn"));
 		objectMax.click();
 		Thread.sleep(1000);
 		objectMax.click();
