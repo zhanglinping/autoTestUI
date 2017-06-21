@@ -37,13 +37,18 @@ public class fennec extends UiAutomatorTestCase {
 		
 		launchTime = endtime.getTime() - starttime.getTime();
 		System.out.println("----------APP launch 时间： " + launchTime +"ms");
-		sleep(3000);
+		sleep(5000);
+
 		//163邮箱验证：openthostest@163.com 密码:Openthos123
-		otoTest.ClickByClass("org.mozilla.gecko.GeckoView");
+		otoTest.SetTextById("org.mozilla.fennec_root:id/url_bar_entry", "mail.163.com");
+		sleep(1000);
 		otoTest.SetTextByClass("org.mozilla.gecko.GeckoView", "openthostest");
 		
-//		window_lib.windowtest(otoTest.mydevice,appName );
-//
+		
+//窗口测试
+		otoTest.ClickById("android:id/mwMaximizeBtn");
+		window_lib.windowtest(otoTest.mydevice,appName );
+
 //		otoDisplayRun.execCmdNoSave("am start -n " + appName);
 //		sleep(1000);
 //		otoTest.ClickById("android:id/mwMaximizeBtn");

@@ -9,5 +9,3 @@ ant build
 adb connect $androidIP
 adb push bin/fennec.jar /data/local/tmp
 adb shell uiautomator runtest fennec.jar -c com.autoTestUI.fennec
-
-python TmpTojson.py $foldName/tmpResultToJson $foldName

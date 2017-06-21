@@ -40,19 +40,26 @@ public class otoDisplayRun extends UiAutomatorTestCase{
 		return SetTextByInfo(CLICK_CLASS,classname,text);
 	}
 	
-	public boolean SetTextByInfo(int CLICK,String str,String text){
+	public boolean SetTextById(String id,String text){
+		return SetTextByInfo(CLICK_ID,id,text);
+	}
+	
+	private boolean SetTextByInfo(int CLICK,String str,String text){
 		UiSelector uiselector = null;
 		switch(CLICK)
 		{
 		case CLICK_CLASS:
 			uiselector=new UiSelector().className(str);
 			break;
+		case CLICK_ID:
+			uiselector=new UiSelector().resourceId(str);
+			break;
 		default:
 			return false;
 		}
-		UiObject myobject = new UiObject(uiselector);
+		UiObject obj = new UiObject(uiselector);
 		int i = 0;
-		while(!myobject.exists() && i < 5){
+		while(!obj.exists() && i < 5){
 //			SolveProblems();
 			sleep(1000);
 			if(i == 4){
@@ -63,7 +70,9 @@ public class otoDisplayRun extends UiAutomatorTestCase{
 			i++;
 		}
 		try {
-			myobject.setText(text);
+			obj.click();
+			obj.setText(text);
+			UiDevice.getInstance().pressEnter();
 		} catch (UiObjectNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
