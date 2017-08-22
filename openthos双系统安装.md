@@ -1,0 +1,8 @@
+## 安装windows+openthos双系统
+  - 分区
+    - uefi分区(2G) 里面有efi相关的文件，openthos的system.sfs文件（是的，初期我们不做独立system分区），以及用于重置和升级系统的相关脚本，
+    - oto_data分区（ext4, 8G）openthos的/data目录
+    - windows分区（ntfs, 100G）
+    - data分区（exfat，剩下所有空间）
+  - ubuntu分区完成后，先安装windows，安装过程中选择自定义安装，其中需要将分区3（100G）先删除，再新建，点击确定后windows会自动划分出另外的三个分区，选择主分区安装
+  - 手动安装openthos（目前手动安装后无法启动openthos，需要U盘启动引导）
