@@ -1,6 +1,6 @@
 ## 安装windows+openthos双系统
   - 分区
-    - uefi分区(2G) 里面有efi相关的文件，openthos的system.sfs文件（是的，初期我们不做独立system分区），以及用于重置和升级系统的相关脚本，
+    - uefi分区(2G) 里面有efi相关的文件，openthos的system.sfs文件，以及用于重置和升级系统的相关脚本，
     - oto_data分区（ext4, 8G）openthos的/data目录
     - windows分区（ntfs, 100G）
     - data分区（exfat，剩下所有空间）
