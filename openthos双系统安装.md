@@ -9,6 +9,10 @@
   - 可参考文档https://github.com/openthos/userguide-analysis/blob/master/%E4%B8%80.%E5%AE%89%E8%A3%85.md
 ## 安装windows+ubuntu双系统
   - 分区
-    - openthos 2G fat32 + 10G ext4 + 100G ext4
-    - ubuntu 1G fat32 + 200G ext4 + 50G swap
+    - openthos 
+      - sda1 2G fat32 + sda2 10G ext4 + sda3 100G ext4
+    - ubuntu 
+      - sda4 200G ext4 + sda5 50G swap
+      - 启动器安装选择sda1
+  - openthos同样是手动安装
     
