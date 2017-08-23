@@ -13,6 +13,6 @@
       - sda1 2G fat32 + sda2 10G ext4 + sda3 100G ext4
     - ubuntu 
       - sda4 200G ext4 + sda5 50G swap
-      - 启动器安装选择sda1
+      - 不安装启动项
   - openthos同样是手动安装
     
