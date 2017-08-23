@@ -13,6 +13,7 @@
       - sda1 2G fat32 + sda2 10G ext4 + sda3 100G ext4
     - ubuntu 
       - sda4 200G ext4 + sda5 50G swap
-      - 不安装启动项
+      - 启动项安装到sda1（或者不安装启动项）
   - openthos同样是手动安装
+  - BIOS中调整启动顺序
     
