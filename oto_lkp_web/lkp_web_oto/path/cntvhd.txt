@@ -1,1 +1,0 @@
-/var/www/html/result/cntvhd/1x/pc/ubuntu/defconfig/gcc-6/20170915/avg.json
