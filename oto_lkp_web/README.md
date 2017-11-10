@@ -1,8 +1,6 @@
-#测试结果展示
+# 测试结果展示
 
-
-
-##代码第一次部署方法：
+## 代码第一次部署方法：
 
 cd ~/workdir/ 
 
@@ -17,7 +15,7 @@ cd ~/workdir/testing-analysis/lkp_result_web
 在浏览器输入http://localhost/result.php查看结果 
 
 
-##部署完成后修改并同步到github上面的方法： 
+## 部署完成后修改并同步到github上面的方法： 
 
 cd /var/www/html/ 
 
