@@ -9,7 +9,7 @@ import com.android.uiautomator.testrunner.UiAutomatorTestCase;
 
 public class weiboTest1 extends UiAutomatorTestCase{
 	//public static String apppackage = "com.skype.raider";
-	public static String appName = "com.sina.weibo/.SplashActivity";
+	public static String appName = "com.sina.weibo/com.sina.weibo.SplashActivity";
 	public static String port = "5555";
 
 	public void testweibo() throws UiObjectNotFoundException, RemoteException,
@@ -30,7 +30,8 @@ public class weiboTest1 extends UiAutomatorTestCase{
 		System.out.println("----------Start time： " +  format.format(starttime));
 		System.out.println("starttime:" +  System.currentTimeMillis());
 		otoDisplayRun.execCmdNoSave("am start -n " + appName);
-		
+		sleep(7000);
+		otoDisplayRun.execCmdNoSave("am start -n " + appName);		
 		endtime = new Date();
 		System.out.println("----------结束时间： " +  format.format(endtime));
 		System.out.println("endtime:" +  System.currentTimeMillis());
