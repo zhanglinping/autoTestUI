@@ -66,7 +66,7 @@ public class firstlogin extends UiAutomatorTestCase {
 		//等待安装应用
 		sleep(50000);
 		UiObject startuse = new UiObject(new UiSelector().resourceId("com.otosoft.setupwizard:id/button_start_use"));
-		startuse.waitForExists(10000);
+		startuse.waitForExists(15000);
 		//进入桌面
 		otoTest.ClickById("com.otosoft.setupwizard:id/button_start_use");
 		sleep(2000);
